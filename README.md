@@ -11,7 +11,7 @@ A small data project that pulls post performance data from the Instagram API and
 Python, pandas, Instagram Graph API, Power BI
 
 ## Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/1.png)
 
 ## How to run
 1. Install dependencies: `pip install -r requirements.txt`
