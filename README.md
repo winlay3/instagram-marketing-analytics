@@ -1,20 +1,25 @@
-# Instagram Marketing Analytics Dashboard
+# Marketing Analytics Pipeline: Instagram + WordPress + Odoo
 
-A small data project that pulls post performance data from the Instagram API and visualizes it in Power BI, answering: which content works best for marketing?
+A small end-to-end data project that tracks how social content connects to website activity, leads and revenue.
+
+## Architecture
+Instagram Graph API ─┐
+WordPress REST API ──┼─> Python (pandas) -> SQLite -> Power BI
+Odoo CRM (XML-RPC) ──┘
 
 ## What it does
-- Extracts posts and insights (likes, comments, reach, saves, shares) using the Instagram Graph API
-- Cleans the data with Python (pandas) and saves it as a CSV
-- Visualizes engagement by post type, posting day and time trends in Power BI
+- Pulls post performance (likes, comments, reach, saves, shares) from Instagram
+- Pulls website posts from WordPress and leads from Odoo CRM
+- Loads everything into SQLite and joins it by campaign with SQL
+- Visualizes engagement, leads and revenue per campaign in Power BI
+- Includes pytest data-quality tests
 
 ## Tech stack
-Python, pandas, Instagram Graph API, Power BI
+Python, pandas, SQL (SQLite), pytest, Docker, Power BI, Instagram Graph API, WordPress REST API, Odoo
+
 
 ## Dashboard
 ![Dashboard](screenshots/1.png)
+![Campaign funnel](screenshots/funnel.png)
 
-## How to run
-1. Install dependencies: `pip install -r requirements.txt`
-2. Copy `.env.example` to `.env` and add your Instagram access token
-3. Run `python fetch_instagram.py` to generate `instagram_posts.csv`
-4. Open `instagram_dashboard.pbix` in Power BI Desktop and refresh the data
+
